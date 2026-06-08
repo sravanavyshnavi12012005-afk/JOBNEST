@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JOBNEST - Manage Jobs</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+        }
+
+        .navbar{
+            background:#0d6efd;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        .container{
+            width:80%;
+            margin:auto;
+            margin-top:30px;
+        }
+
+        .page-title{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .page-title h2{
+            color:#333;
+        }
+
+        .job-card{
+            background:white;
+            padding:25px;
+            margin-bottom:20px;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .job-card h3{
+            color:#0d6efd;
+            margin-bottom:15px;
+        }
+
+        .job-card p{
+            margin-bottom:10px;
+            color:#444;
+        }
+
+        .button-group{
+            margin-top:20px;
+        }
+
+        .edit-btn{
+            display:inline-block;
+            background:#0d6efd;
+            color:white;
+            text-decoration:none;
+            padding:10px 20px;
+            border-radius:6px;
+            margin-right:10px;
+        }
+
+        .edit-btn:hover{
+            background:#084298;
+        }
+
+        .delete-btn{
+            display:inline-block;
+            background:#dc3545;
+            color:white;
+            text-decoration:none;
+            padding:10px 20px;
+            border-radius:6px;
+        }
+
+        .delete-btn:hover{
+            background:#bb2d3b;
+        }
+
+        .no-jobs{
+            background:white;
+            padding:25px;
+            text-align:center;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .footer{
+            margin-top:40px;
+            background:#212529;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>JOBNEST</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="page-title">
+            <h2>Manage Posted Jobs</h2>
+        </div>
+
+        {% if jobs %}
+
+            {% for job in jobs %}
+
+                <div class="job-card">
+
+                    <h3>{{ job.title }}</h3>
+
+                    <p>
+                        <strong>Location:</strong>
+                        {{ job.location }}
+                    </p>
+
+                    <p>
+                        <strong>Salary:</strong>
+                        ₹{{ job.salary }}
+                    </p>
+
+                    <div class="button-group">
+
+                        <a href="/edit-job/{{ job.id }}/"
+                           class="edit-btn">
+                            Edit
+                        </a>
+
+                        <a href="/delete-job/{{ job.id }}/"
+                           class="delete-btn">
+                            Delete
+                        </a>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="no-jobs">
+
+                <h3>No jobs posted yet.</h3>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+    <div class="footer">
+        <p>JOBNEST - Employer Job Management</p>
+    </div>
+
+</body>
+</html>

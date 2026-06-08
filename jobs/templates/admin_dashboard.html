@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JOBNEST - Admin Dashboard</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+        }
+
+        .navbar{
+            background:#0d6efd;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        .container{
+            width:90%;
+            margin:auto;
+            margin-top:40px;
+        }
+
+        .welcome{
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .welcome h2{
+            color:#333;
+            margin-bottom:10px;
+        }
+
+        .welcome p{
+            color:#666;
+        }
+
+        .stats-container{
+            display:flex;
+            justify-content:center;
+            gap:25px;
+            flex-wrap:wrap;
+            margin-bottom:50px;
+        }
+
+        .stat-card{
+            background:white;
+            width:220px;
+            padding:25px;
+            text-align:center;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3{
+            color:#0d6efd;
+            margin-bottom:10px;
+        }
+
+        .stat-card p{
+            font-size:28px;
+            font-weight:bold;
+            color:#333;
+        }
+
+        .card-container{
+            display:flex;
+            justify-content:center;
+            gap:25px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            background:white;
+            width:280px;
+            padding:25px;
+            text-align:center;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card h3{
+            color:#0d6efd;
+            margin-bottom:15px;
+        }
+
+        .card p{
+            color:#666;
+            margin-bottom:20px;
+            line-height:1.5;
+        }
+
+        .btn{
+            display:inline-block;
+            background:#0d6efd;
+            color:white;
+            text-decoration:none;
+            padding:10px 20px;
+            border-radius:6px;
+        }
+
+        .btn:hover{
+            background:#084298;
+        }
+
+        .footer{
+            margin-top:60px;
+            background:#212529;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>JOBNEST Admin Dashboard</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="welcome">
+            <h2>System Administration</h2>
+            <p>
+                Monitor users, jobs, applications, and platform statistics.
+            </p>
+        </div>
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h3>Job Seekers</h3>
+                <p>{{ seekers_count }}</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Employers</h3>
+                <p>{{ employers_count }}</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Jobs Posted</h3>
+                <p>{{ jobs_count }}</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Applications</h3>
+                <p>{{ applications_count }}</p>
+            </div>
+
+        </div>
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <h3>Job Seekers</h3>
+
+                <p>
+                    View all registered job seekers on the platform.
+                </p>
+
+                <a href="/view-seekers/" class="btn">
+                    View Seekers
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Employers</h3>
+
+                <p>
+                    View all registered employers and companies.
+                </p>
+
+                <a href="/view-employers/" class="btn">
+                    View Employers
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Jobs</h3>
+
+                <p>
+                    View all jobs posted across the platform.
+                </p>
+
+                <a href="/view-all-jobs/" class="btn">
+                    View Jobs
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Applications</h3>
+
+                <p>
+                    View all job applications submitted by candidates.
+                </p>
+
+                <a href="/view-applications/" class="btn">
+                    View Applications
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>JOBNEST - Administration Panel</p>
+    </div>
+
+</body>
+</html>

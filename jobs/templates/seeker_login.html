@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JOBNEST - Job Seeker Login</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+        }
+
+        .navbar{
+            background:#0d6efd;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        .login-container{
+            width:400px;
+            margin:60px auto;
+            background:white;
+            padding:35px;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .login-container h2{
+            text-align:center;
+            color:#0d6efd;
+            margin-bottom:25px;
+        }
+
+        label{
+            font-weight:bold;
+            color:#333;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin-top:8px;
+            margin-bottom:20px;
+            border:1px solid #ccc;
+            border-radius:6px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#0d6efd;
+            color:white;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#084298;
+        }
+
+        .register-link{
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .register-link a{
+            color:#0d6efd;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        .footer{
+            margin-top:40px;
+            background:#212529;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>JOBNEST</h1>
+    </div>
+
+    <div class="login-container">
+
+        <h2>Job Seeker Login</h2>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+            >
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <div class="register-link">
+
+            New User?
+
+            <a href="/seeker-register/">
+                Register Here
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>JOBNEST - Connecting Talent with Opportunity</p>
+    </div>
+
+</body>
+</html>

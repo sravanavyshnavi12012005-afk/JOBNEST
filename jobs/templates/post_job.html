@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JOBNEST - Post Job</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+        }
+
+        .navbar{
+            background:#0d6efd;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        .container{
+            width:600px;
+            margin:40px auto;
+        }
+
+        .card{
+            background:white;
+            padding:35px;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .card h2{
+            text-align:center;
+            color:#0d6efd;
+            margin-bottom:25px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#333;
+        }
+
+        input,
+        textarea{
+            width:100%;
+            padding:12px;
+            margin-bottom:18px;
+            border:1px solid #ccc;
+            border-radius:6px;
+            font-size:14px;
+        }
+
+        textarea{
+            height:140px;
+            resize:vertical;
+        }
+
+        .btn{
+            width:100%;
+            background:#0d6efd;
+            color:white;
+            border:none;
+            padding:12px;
+            border-radius:6px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        .btn:hover{
+            background:#084298;
+        }
+
+        .footer{
+            margin-top:40px;
+            background:#212529;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>JOBNEST</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Post a New Job</h2>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <label>Job Title</label>
+
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Example: Python Developer"
+                    required
+                >
+
+                <label>Job Description</label>
+
+                <textarea
+                    name="description"
+                    placeholder="Describe responsibilities, requirements, and qualifications..."
+                    required
+                ></textarea>
+
+                <label>Job Location</label>
+
+                <input
+                    type="text"
+                    name="location"
+                    placeholder="Example: Hyderabad"
+                    required
+                >
+
+                <label>Salary</label>
+
+                <input
+                    type="number"
+                    name="salary"
+                    placeholder="Example: 500000"
+                    required
+                >
+
+                <button type="submit" class="btn">
+                    Post Job
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>JOBNEST - Employer Recruitment Portal</p>
+    </div>
+
+</body>
+</html>

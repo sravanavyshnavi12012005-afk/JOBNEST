@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JOBNEST - Job Seeker Dashboard</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+        }
+
+        .navbar{
+            background:#0d6efd;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+
+        .navbar h1{
+            margin:0;
+        }
+
+        .container{
+            width:85%;
+            margin:auto;
+            margin-top:40px;
+        }
+
+        .welcome-section{
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .welcome-section h2{
+            color:#333;
+            margin-bottom:10px;
+        }
+
+        .welcome-section p{
+            color:#666;
+        }
+
+        .card-container{
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            background:white;
+            width:300px;
+            padding:25px;
+            border-radius:12px;
+            text-align:center;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card h3{
+            color:#0d6efd;
+            margin-bottom:15px;
+        }
+
+        .card p{
+            color:#666;
+            margin-bottom:20px;
+            line-height:1.5;
+        }
+
+        .btn{
+            display:inline-block;
+            background:#0d6efd;
+            color:white;
+            text-decoration:none;
+            padding:10px 20px;
+            border-radius:6px;
+        }
+
+        .btn:hover{
+            background:#084298;
+        }
+
+        .footer{
+            margin-top:60px;
+            background:#212529;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>JOBNEST</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="welcome-section">
+            <h2>Job Seeker Dashboard</h2>
+            <p>
+                Manage your job applications and explore career opportunities.
+            </p>
+        </div>
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <h3>View Available Jobs</h3>
+
+                <p>
+                    Browse available jobs, search by title or location,
+                    and apply for opportunities.
+                </p>
+
+                <a href="/view-jobs/" class="btn">
+                    View Jobs
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <h3>My Applied Jobs</h3>
+
+                <p>
+                    Track all your submitted applications and monitor
+                    their current status.
+                </p>
+
+                <a href="/applied-jobs/" class="btn">
+                    View Applications
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Logout</h3>
+
+                <p>
+                    Securely sign out from your JOBNEST account.
+                </p>
+
+                <a href="/logout/" class="btn">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>JOBNEST - Connecting Talent with Opportunity</p>
+    </div>
+
+</body>
+</html>

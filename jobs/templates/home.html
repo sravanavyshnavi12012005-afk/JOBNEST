@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JOBNEST</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+        }
+
+        .navbar{
+            background:#0d6efd;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+
+        .hero{
+            text-align:center;
+            padding:60px 20px;
+        }
+
+        .hero h1{
+            font-size:50px;
+            color:#0d6efd;
+            margin-bottom:15px;
+        }
+
+        .hero p{
+            font-size:20px;
+            color:#555;
+            margin-bottom:40px;
+        }
+
+        .container{
+            width:80%;
+            margin:auto;
+        }
+
+        .card-container{
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            background:white;
+            width:300px;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+
+        .card h2{
+            margin-bottom:15px;
+            color:#333;
+        }
+
+        .card p{
+            margin-bottom:20px;
+            color:#666;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:10px 20px;
+            background:#0d6efd;
+            color:white;
+            text-decoration:none;
+            border-radius:6px;
+        }
+
+        .btn:hover{
+            background:#084298;
+        }
+
+        .admin-section{
+            text-align:center;
+            margin-top:50px;
+        }
+
+        .footer{
+            margin-top:60px;
+            background:#212529;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h2>JOBNEST Job Portal</h2>
+    </div>
+
+    <div class="hero">
+
+        <h1>JOBNEST</h1>
+
+        <p>
+            Connecting Talent with Opportunity
+        </p>
+
+    </div>
+
+    <div class="container">
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <h2>Job Seeker</h2>
+
+                <p>
+                    Register, search jobs, apply for jobs,
+                    and track application status.
+                </p>
+
+                <a href="/seeker-register/" class="btn">
+                    Register
+                </a>
+
+                <br><br>
+
+                <a href="/seeker-login/" class="btn">
+                    Login
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <h2>Employer</h2>
+
+                <p>
+                    Register your company, post jobs,
+                    manage jobs, and view applicants.
+                </p>
+
+                <a href="/employer-register/" class="btn">
+                    Register
+                </a>
+
+                <br><br>
+
+                <a href="/employer-login/" class="btn">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="admin-section">
+
+            <h3>Administration</h3>
+
+            <br>
+
+            <a href="/admin-dashboard/" class="btn">
+                Admin Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <h3>JOBNEST</h3>
+
+        <p>
+            Professional Job Portal Management System
+        </p>
+
+    </div>
+
+</body>
+</html>

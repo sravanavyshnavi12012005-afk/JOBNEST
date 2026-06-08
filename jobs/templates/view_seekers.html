@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JOBNEST - All Job Seekers</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+        }
+
+        .navbar{
+            background:#0d6efd;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        .container{
+            width:80%;
+            margin:auto;
+            margin-top:30px;
+        }
+
+        .page-title{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .page-title h2{
+            color:#333;
+        }
+
+        .seeker-card{
+            background:white;
+            padding:25px;
+            margin-bottom:20px;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .seeker-card h3{
+            color:#0d6efd;
+            margin-bottom:15px;
+        }
+
+        .seeker-card p{
+            margin-bottom:10px;
+            color:#444;
+            line-height:1.6;
+        }
+
+        .no-data{
+            background:white;
+            padding:25px;
+            text-align:center;
+            border-radius:12px;
+            box-shadow:0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .footer{
+            margin-top:40px;
+            background:#212529;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>JOBNEST</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="page-title">
+            <h2>Registered Job Seekers</h2>
+        </div>
+
+        {% if seekers %}
+
+            {% for seeker in seekers %}
+
+                <div class="seeker-card">
+
+                    <h3>{{ seeker.full_name }}</h3>
+
+                    <p>
+                        <strong>Email:</strong>
+                        {{ seeker.email }}
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong>
+                        {{ seeker.phone }}
+                    </p>
+
+                    <p>
+                        <strong>Skills:</strong>
+                        {{ seeker.skills }}
+                    </p>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="no-data">
+
+                <h3>No job seekers found.</h3>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+    <div class="footer">
+        <p>JOBNEST - Admin Management Portal</p>
+    </div>
+
+</body>
+</html>
